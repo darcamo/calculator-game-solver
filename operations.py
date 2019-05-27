@@ -310,11 +310,6 @@ class Tests(unittest.TestCase):
         self.assertEqual(mirror(-123), -123321)
         self.assertEqual(mirror(20), 2002)
 
-    # def test_op_class(self):
-    #     r = Operation("reverse", reverse)
-    #     self.assertEqual(r.apply(246), 642)
-    #     self.assertEqual(r.name, "reverse")
-
     def test_replace(self):
         self.assertEqual(replace(-12345, 34, 99), -12995)
         self.assertEqual(replace(12345, 12, 00), 345)

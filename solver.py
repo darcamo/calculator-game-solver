@@ -170,7 +170,6 @@ def apply_operations(value_and_ops, operations):
         except ValueError:
             pass
     return result
-    # return [(op.apply(value), current_ops + [op]) for op in operations]
 
 
 # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
