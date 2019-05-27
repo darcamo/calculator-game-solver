@@ -286,15 +286,18 @@ if __name__ == '__main__1':
 
 if __name__ == '__main__':
     # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    # MODIFY THE VALUES HERE
+
     start_value = 3002
     target_value = 3507
     num_moves = 6
 
-    # +1 Storage Retrieve +1 Retrieve
-
+    # Note that when there is the memory button, you need to add both store and
+    # retrieve actions to `operations`
     storage = op.StorageAction()
     retrieve = op.RetrieveAction()
 
+    # Uncomment and modify the necessary buttons according to the level
     operations = [
         # op.SumX(6),
         # op.MultiplyX(3),
@@ -317,13 +320,20 @@ if __name__ == '__main__':
         op.Inv10EachDigit()
     ]
 
+    # # If there is the button that modify other buttons, uncomment the following two lined.
     # mb = op.ModifyButtons_AddValue(operations, 1)
     # operations.append(mb)
 
     warp = None
+    # Uncomment the line below if the level has the portls
+    #
+    # The first argument is the index of the enter portal while the second
+    # argument is the index of the end portal (usually zero, since it is the
+    # first digit)
     warp = op.WarpAction(4, 0)
     # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+    # There is no need to change anything below
     root = Node(value=start_value, current_op=None, available_ops=operations,
                 num_remaining_moves=num_moves, warp=warp)
     root.create_children()
